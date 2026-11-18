@@ -1,0 +1,10 @@
+@import './primitives.css';
+@import './semantic.css';
+@import './spacing.css';
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
