@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design System · demo</title>
+    <link rel="stylesheet" href="./src/tokens/index.css" />
+    <link rel="stylesheet" href="./src/components/Button.css" />
+    <style>main { padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-6); }
+      .row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }</style>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <button class="btn" data-variant="secondary" id="tema">🌙 Alternar tema</button>
+      </div>
+      <div class="row">
+        <button class="btn" data-variant="primary">primary</button>
+        <button class="btn" data-variant="secondary">secondary</button>
+        <button class="btn" data-variant="ghost">ghost</button>
+        <button class="btn" data-variant="danger">danger</button>
+      </div>
+      <div class="row">
+        <button class="btn" data-variant="primary" data-size="sm">sm</button>
+        <button class="btn" data-variant="primary">md</button>
+        <button class="btn" data-variant="primary" data-size="lg">lg</button>
+        <button class="btn" data-variant="primary" disabled>disabled</button>
+        <button class="btn" data-variant="primary" data-loading="true">loading</button>
+      </div>
+    </main>
+    <script>
+      document.getElementById('tema').addEventListener('click', () => {
+        const html = document.documentElement;
+        html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      });
+    </script>
+  </body>
+</html>
